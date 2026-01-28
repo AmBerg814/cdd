@@ -24,6 +24,7 @@ jobs:
 
       - name: Install NPM packages
         run: npm i
+        working-directory: ./myapp
 
       - name: Build project
         run: npm run build
@@ -38,10 +39,6 @@ jobs:
         with:
           name: production-files
           path: myapp/build
-
-      - name: Install NPM packages
-        run: npm i  
-        working-directory: ./myapp
 
   deploy:
     name: Deploy
